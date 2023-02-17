@@ -1,0 +1,11 @@
+org\bankly\walletservice\controller\WalletController.class
+org\bankly\walletservice\dtos\WalletResponseDto.class
+org\bankly\walletservice\entities\Wallet$WalletBuilder.class
+org\bankly\walletservice\entities\Wallet.class
+org\bankly\walletservice\services\serviceimpl\WalletServiceImpl.class
+org\bankly\walletservice\dtos\WalletRequestDto.class
+org\bankly\walletservice\dtos\WalletResponseDto$WalletResponseDtoBuilder.class
+org\bankly\walletservice\WalletServiceApplication.class
+org\bankly\walletservice\services\WalletService.class
+org\bankly\walletservice\dtos\WalletRequestDto$WalletRequestDtoBuilder.class
+org\bankly\walletservice\repositories\WalletRepository.class

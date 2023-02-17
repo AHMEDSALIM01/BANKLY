@@ -1,0 +1,16 @@
+C:\Users\Youcode\IdeaProjects\BANKLY\authentication-service\src\main\java\org\bankly\authenticationservice\security\SecurityConfig.java
+C:\Users\Youcode\IdeaProjects\BANKLY\authentication-service\src\main\java\org\bankly\authenticationservice\handler\CustomAuthenticationFailureHandler.java
+C:\Users\Youcode\IdeaProjects\BANKLY\authentication-service\src\main\java\org\bankly\authenticationservice\dtos\UserDto.java
+C:\Users\Youcode\IdeaProjects\BANKLY\authentication-service\src\main\java\org\bankly\authenticationservice\services\WalletServiceClient.java
+C:\Users\Youcode\IdeaProjects\BANKLY\authentication-service\src\main\java\org\bankly\authenticationservice\security\models\MyUser.java
+C:\Users\Youcode\IdeaProjects\BANKLY\authentication-service\src\main\java\org\bankly\authenticationservice\services\serviceimpl\UserServiceImplementation.java
+C:\Users\Youcode\IdeaProjects\BANKLY\authentication-service\src\main\java\org\bankly\authenticationservice\dtos\WalletRequestDto.java
+C:\Users\Youcode\IdeaProjects\BANKLY\authentication-service\src\main\java\org\bankly\authenticationservice\controllers\AuthenticationController.java
+C:\Users\Youcode\IdeaProjects\BANKLY\authentication-service\src\main\java\org\bankly\authenticationservice\services\UserService.java
+C:\Users\Youcode\IdeaProjects\BANKLY\authentication-service\src\main\java\org\bankly\authenticationservice\validators\UserValidator.java
+C:\Users\Youcode\IdeaProjects\BANKLY\authentication-service\src\main\java\org\bankly\authenticationservice\security\filters\JwtAuthenticationFilter.java
+C:\Users\Youcode\IdeaProjects\BANKLY\authentication-service\src\main\java\org\bankly\authenticationservice\AuthenticationServiceApplication.java
+C:\Users\Youcode\IdeaProjects\BANKLY\authentication-service\src\main\java\org\bankly\authenticationservice\repositories\UserRepository.java
+C:\Users\Youcode\IdeaProjects\BANKLY\authentication-service\src\main\java\org\bankly\authenticationservice\security\filters\JwtAuthorizationFilter.java
+C:\Users\Youcode\IdeaProjects\BANKLY\authentication-service\src\main\java\org\bankly\authenticationservice\dtos\WalletResponseDto.java
+C:\Users\Youcode\IdeaProjects\BANKLY\authentication-service\src\main\java\org\bankly\authenticationservice\entities\Users.java

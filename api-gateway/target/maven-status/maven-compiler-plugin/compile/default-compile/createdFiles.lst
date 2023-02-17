@@ -1,0 +1,2 @@
+org\bankly\apigateway\ApiGatewayApplication.class
+org\bankly\apigateway\security\JwtAuthFilter.class
