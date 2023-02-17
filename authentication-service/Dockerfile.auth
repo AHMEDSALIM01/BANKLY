@@ -1,0 +1,4 @@
+FROM openjdk:11
+ARG WAR_FILE=target/*.jar
+COPY target/authentication-service-1.0-SNAPSHOT.jar auth.jar
+ENTRYPOINT ["java", "-jar","auth.jar"]

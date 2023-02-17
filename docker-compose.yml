@@ -1,0 +1,71 @@
+version: '3'
+services:
+  wallet:
+    build:
+      context: .
+      dockerfile: Dockerfile.wallet
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/wallet
+    ports:
+      - "8082:8082"
+    depends_on:
+      - mongo
+  transaction:
+    build:
+      context: .
+      dockerfile: Dockerfile.transaction
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/transaction
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD:
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mysql
+  discovery:
+    build:
+      context: .
+      dockerfile: Dockerfile.discovery
+    ports:
+      - "8761:8761"
+  auth:
+    build:
+      context: .
+      dockerfile: Dockerfile.auth
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/auth
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: root
+    ports:
+      - "8888:8888"
+    depends_on:
+      - postgres
+  api-gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile.api-gateway
+    ports:
+      - "8080:8080"
+    depends_on:
+      - wallet
+      - transaction
+      - discovery
+      - auth
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+  mysql:
+    image: mysql:8.0.26
+    environment:
+      MYSQL_ROOT_PASSWORD:
+      MYSQL_DATABASE: transaction
+    ports:
+      - "3306:3306"
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: auth
+    ports:
+      - "5432:5432"

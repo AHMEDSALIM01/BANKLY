@@ -1,0 +1,4 @@
+FROM openjdk:11
+ARG WAR_FILE=target/*.jar
+COPY target/wallet-service-1.0-SNAPSHOT.jar wallet-service.jar
+ENTRYPOINT ["java", "-jar","wallet-service.jar"]
