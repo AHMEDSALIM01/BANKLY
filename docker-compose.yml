@@ -2,7 +2,7 @@ version: '3'
 services:
   wallet:
     build:
-      context: .
+      context: /wallet-service
       dockerfile: Dockerfile.wallet
     environment:
       SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/wallet
@@ -12,10 +12,10 @@ services:
       - mongo
   transaction:
     build:
-      context: .
+      context: /transaction-service
       dockerfile: Dockerfile.transaction
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/transaction
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/bankly
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD:
     ports:
@@ -24,13 +24,16 @@ services:
       - mysql
   discovery:
     build:
-      context: .
+      context: /discovery-server
       dockerfile: Dockerfile.discovery
     ports:
       - "8761:8761"
+    depends_on:
+      - wallet
+      - auth
   auth:
     build:
-      context: .
+      context: /authentication-service
       dockerfile: Dockerfile.auth
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/auth
@@ -42,15 +45,12 @@ services:
       - postgres
   api-gateway:
     build:
-      context: .
+      context: /api-gateway
       dockerfile: Dockerfile.api-gateway
     ports:
       - "8080:8080"
     depends_on:
-      - wallet
-      - transaction
       - discovery
-      - auth
   mongo:
     image: mongo
     ports:
@@ -59,7 +59,8 @@ services:
     image: mysql:8.0.26
     environment:
       MYSQL_ROOT_PASSWORD:
-      MYSQL_DATABASE: transaction
+      MYSQL_DATABASE: bankly
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
     ports:
       - "3306:3306"
   postgres:
